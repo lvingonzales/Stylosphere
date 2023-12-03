@@ -3903,7 +3903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b7c86350a908f54485b73b2632a6d1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjWithLineRenderer: {fileID: 118290313}
+  ObjWithLineRenderer: {fileID: 233936640}
 --- !u!4 &1589409842
 Transform:
   m_ObjectHideFlags: 0

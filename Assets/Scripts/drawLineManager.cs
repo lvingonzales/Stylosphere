@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class drawLineManager : MonoBehaviour
 {
-    // Update is called once per frame
     void Update()
     {
         CheckButtonInputs();
     }
-
     int numClick = 0;
     private LineRenderer currLine;
+    public Material lmat;
     private void CheckButtonInputs()
     {
         OVRInput.Update();
@@ -24,6 +23,7 @@ public class drawLineManager : MonoBehaviour
             GameObject line = new GameObject ();
             currLine = line.AddComponent<LineRenderer> ();
 
+            currLine.lmat = lmat;
             currLine.startWidth = 0.1f;
             currLine.endWidth = 0.1f;
             
@@ -34,6 +34,14 @@ public class drawLineManager : MonoBehaviour
             Debug.Log ("A is being held");
             currLine.SetPosition (numClick, rightControllerPosition);
             numClick++;
+        }
+
+        // Check for a key press (you can change this to any condition you like)
+        if (OVRInput.GetDown(OVRInput.Button.Two))
+        {
+            // Change the color to a new color (you can set any color you want)
+            SetLineColor(Color.red);
+            Debug.Log("Space");
         }
 
     }
