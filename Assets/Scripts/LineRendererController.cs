@@ -52,9 +52,10 @@ public class LineRendererController : MonoBehaviour
 
     // Example of how to change the color during runtime
     void Update()
-    {
+    {   
+        OVRInput.Update();
         // Check for a key press (you can change this to any condition you like)
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (OVRInput.GetDown(OVRInput.Button.Two))
         {
             // Change the color to a new color (you can set any color you want)
             SetLineColor(Color.red);
