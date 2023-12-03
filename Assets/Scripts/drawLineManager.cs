@@ -11,7 +11,7 @@ public class drawLineManager : MonoBehaviour
     }
 
     int numClick = 0;
-    private LineRenderer currLine;
+    private advancedLineRenderer currLine;
     private void CheckButtonInputs()
     {
         OVRInput.Update();
@@ -20,19 +20,22 @@ public class drawLineManager : MonoBehaviour
 
         if (OVRInput.GetDown(OVRInput.Button.One))
         {
-            Debug.Log ("A Button Pressed");
+            //Debug.Log ("A Button Pressed");
             GameObject line = new GameObject ();
-            currLine = line.AddComponent<LineRenderer> ();
+            line.AddComponent<MeshFilter> ();
+            line.AddComponent<MeshRenderer> (); 
+            currLine = line.AddComponent<advancedLineRenderer> ();
 
-            currLine.startWidth = 0.1f;
-            currLine.endWidth = 0.1f;
+            currLine.SetWidth (.1f);
             
             numClick = 0;
         }else if(OVRInput.Get(OVRInput.Button.One))
         {
-            currLine.positionCount = (numClick + 1);
-            Debug.Log ("A is being held");
-            currLine.SetPosition (numClick, rightControllerPosition);
+            //currLine.positionCount = (numClick + 1);
+            Debug.Log (rightControllerPosition);
+            //currLine.SetPosition (numClick, rightControllerPosition);
+
+            currLine.AddPoint(rightControllerPosition);
             numClick++;
         }
 
