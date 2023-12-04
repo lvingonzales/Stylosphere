@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 233936642}
-  - component: {fileID: 233936641}
+  - component: {fileID: 233936643}
   m_Layer: 0
   m_Name: rightDrawLineManager
   m_TagString: Untagged
@@ -140,18 +140,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &233936641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 233936640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b811faf9bb4c4a41b65cda601d4cecf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &233936642
 Transform:
   m_ObjectHideFlags: 0
@@ -167,6 +155,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &233936643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233936640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7614155a373b40848b1c0e078945cbb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mat1: {fileID: 2100000, guid: 714aa12282daf244da3a7a42de42851f, type: 2}
+  mat2: {fileID: 2100000, guid: 84dfcf8ecb3aa1242804d64b76b7501c, type: 2}
+  mat3: {fileID: 2100000, guid: f2b3ce99909acef4b8bae979205cb5cf, type: 2}
+  mat4: {fileID: 2100000, guid: d53104d4a24e8784892a98b11046ebbd, type: 2}
+  mat5: {fileID: 2100000, guid: 043a0f5e880d5124cb1de4814c66f6d4, type: 2}
+  mat6: {fileID: 2100000, guid: 52de0e057663b5b4aac03453fae323f6, type: 2}
 --- !u!1 &282932682
 GameObject:
   m_ObjectHideFlags: 0
