@@ -1230,6 +1230,7 @@ GameObject:
   - component: {fileID: 591715876}
   - component: {fileID: 591715875}
   - component: {fileID: 591715874}
+  - component: {fileID: 591715879}
   m_Layer: 0
   m_Name: Left Controller
   m_TagString: Untagged
@@ -1872,6 +1873,30 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: 0}
   m_ButtonPressPoint: 0.5
+--- !u!114 &591715879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591715872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10c8ce6730be1e348acbe2807286256e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ColorPickerActivated: 1
+  Pointer: {fileID: 0}
+  pointerYOffset: 0.15
+  PointerLine: {fileID: 591715876}
+  allowedLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  includeAlphaChannel: 1
+  pickerInput: 0
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &655257651
 GameObject:
   m_ObjectHideFlags: 0

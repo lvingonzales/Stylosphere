@@ -124,20 +124,20 @@ public class advancedLineRenderer : MonoBehaviour
             vl -= 4;
 
         ts[tl] = vl;
-        ts[tl+1] = vl=2;
-        ts[tl+2] = vl=4;
+        ts[tl+1] = vl+2;
+        ts[tl+2] = vl+4;
 
-        ts[tl+3] = vl=2;
-        ts[tl+4] = vl=6;
-        ts[tl+5] = vl=4;
+        ts[tl+3] = vl+2;
+        ts[tl+4] = vl+6;
+        ts[tl+5] = vl+4;
 
-        ts[tl+6] = vl=5;
-        ts[tl+7] = vl=3;
-        ts[tl+8] = vl=1;
+        ts[tl+6] = vl+5;
+        ts[tl+7] = vl+3;
+        ts[tl+8] = vl+1;
 
-        ts[tl+9] = vl=5;
-        ts[tl+10] = vl=7;
-        ts[tl+11] = vl=3;
+        ts[tl+9] = vl+5;
+        ts[tl+10] = vl+7;
+        ts[tl+11] = vl+3;
 
         m.vertices = vs;
         m.uv = uvs;

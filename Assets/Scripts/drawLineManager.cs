@@ -20,7 +20,7 @@ public class drawLineManager : MonoBehaviour
 
         if (OVRInput.GetDown(OVRInput.Button.One))
         {
-            //Debug.Log ("A Button Pressed");
+            Debug.Log (rightControllerPosition);
             GameObject line = new GameObject ();
             line.AddComponent<MeshFilter> ();
             line.AddComponent<MeshRenderer> (); 
@@ -32,7 +32,7 @@ public class drawLineManager : MonoBehaviour
         }else if(OVRInput.Get(OVRInput.Button.One))
         {
             //currLine.positionCount = (numClick + 1);
-            Debug.Log (rightControllerPosition);
+            //Debug.Log (rightControllerPosition);
             //currLine.SetPosition (numClick, rightControllerPosition);
 
             currLine.AddPoint(rightControllerPosition);
