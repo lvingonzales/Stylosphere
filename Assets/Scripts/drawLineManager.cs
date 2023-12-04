@@ -1,14 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class drawLineManager : MonoBehaviour
 {
-    // Update is called once per frame
-    void Update()
-    {
-        CheckButtonInputs();
-    }
     public Material mat1;
     public Material mat2;
     public Material mat3;
@@ -16,10 +12,21 @@ public class drawLineManager : MonoBehaviour
     public Material mat5;
     public Material mat6;
 
-    int currColor;
+    public GameObject CUI;
+    public Material currMat;
+
+    public GameObject SizeSlider;
+
+    int currColor = 1;
     int numClick = 0;
     private advancedLineRenderer currLine;
-    private rContColor contColor;
+    // Update is called once per frame
+    void Update()
+    {   
+        CheckButtonInputs();
+        CheckColors();
+    }
+    
     private void CheckButtonInputs()
     {
         OVRInput.Update();
@@ -28,57 +35,27 @@ public class drawLineManager : MonoBehaviour
 
         if (OVRInput.GetDown(OVRInput.Button.One))
         {
-            Debug.Log (rightControllerPosition);
+            //Debug.Log (rightControllerPosition);
             GameObject line = new GameObject ();
             line.AddComponent<MeshFilter> ();
             line.AddComponent<MeshRenderer> (); 
             currLine = line.AddComponent<advancedLineRenderer> ();
-            
-            switch (currColor)
-            {
-                case 1:
-                    currLine.lineMat = mat1;
-                    contColor.contMat = mat1;
-                break;
-                case 2:
-                    currLine.lineMat = mat2;
-                    contColor.contMat = mat2;
-                break;
-                case 3:
-                    currLine.lineMat = mat3;
-                    contColor.contMat = mat3;
-                break;
-                case 4:
-                    currLine.lineMat = mat4;
-                    contColor.contMat = mat4;
-                break;
-                case 5:
-                    currLine.lineMat = mat5;
-                    contColor.contMat = mat5;
-                break;
-                case 6:
-                    currLine.lineMat = mat6;
-                    contColor.contMat = mat6;
-                break;
-                default:
-                    currLine.lineMat = mat1;
-                    contColor.contMat = mat1;
-                break;
-            }
 
-            currLine.SetWidth (.1f);
+            currLine.SetWidth (CheckSize());
+            currLine.lineMat = currMat;
             
             numClick = 0;
         }else if(OVRInput.Get(OVRInput.Button.One))
         {
-            //currLine.positionCount = (numClick + 1);
-            //Debug.Log (rightControllerPosition);
-            //currLine.SetPosition (numClick, rightControllerPosition);
 
             currLine.AddPoint(rightControllerPosition);
             numClick++;
-        } else if (OVRInput.GetDown(OVRInput.Button.Two))
+
+        }
+        if (OVRInput.GetDown(OVRInput.Button.Two))
         {
+
+            //Debug.Log ("B Pressed");
             currColor+=1;
 
             if (currColor > 6)
@@ -87,5 +64,40 @@ public class drawLineManager : MonoBehaviour
             }
         }
 
+    }
+
+
+    private void CheckColors() 
+    {
+        switch (currColor)
+            {
+                case 1:
+                    currMat = mat1;
+                break;
+                case 2:
+                    currMat = mat2;
+                break;
+                case 3:
+                    currMat = mat3;                    
+                break;
+                case 4:
+                    currMat = mat4;
+                break;
+                case 5:
+                    currMat = mat5;
+                break;
+                case 6:
+                   currMat = mat6;             
+                break;
+            }
+
+        CUI.GetComponent<Image> ().material = currMat;
+    }
+
+    private float CheckSize()
+    {
+        Debug.Log ("Check Size Reached");
+        float width = SizeSlider.GetComponent<Slider> ().value;
+        return width;
     }
 }
