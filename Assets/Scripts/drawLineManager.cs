@@ -27,20 +27,20 @@ public class drawLineManager : MonoBehaviour
     [SerializeField] private InputActionReference rConPos;
     void Update()
     {   
+        OVRInput.Update();
         CheckButtonInputs();
         CheckColors();
     }
     
     private void CheckButtonInputs()
     {
-        OVRInput.Update();
         //Vector3 rightControllerPosition = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch);
 
         Vector3 rightControllerPosition = rightController.transform.position;
 
         //Vector3 rightControllerPosition = rConPos.action.ReadValue<Vector3>();
 
-        Debug.Log(rightControllerPosition);
+        //Debug.Log(rightControllerPosition);
 
         if (OVRInput.GetDown(OVRInput.Button.One))
         {
@@ -50,7 +50,7 @@ public class drawLineManager : MonoBehaviour
             line.AddComponent<MeshRenderer> (); 
             currLine = line.AddComponent<advancedLineRenderer> ();
 
-            currLine.SetWidth (0.1f);
+            currLine.SetWidth (CheckSize());
             currLine.lineMat = currMat;
             
             numClick = 0;
@@ -64,7 +64,7 @@ public class drawLineManager : MonoBehaviour
         if (OVRInput.GetDown(OVRInput.Button.Two))
         {
 
-            //Debug.Log ("B Pressed");
+            Debug.Log ("B Pressed");
             currColor+=1;
 
             if (currColor > 6)
@@ -100,7 +100,7 @@ public class drawLineManager : MonoBehaviour
                 break;
             }
 
-        //CUI.GetComponent<Image> ().material = currMat;
+        CUI.GetComponent<Image> ().material = currMat;
     }
 
     private float CheckSize()
