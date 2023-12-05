@@ -32,6 +32,7 @@ public class drawLineManager : MonoBehaviour
         OVRInput.Update();
 
         Vector3 rightControllerPosition = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch);
+        -**
 
         if (OVRInput.GetDown(OVRInput.Button.One))
         {
