@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.16215178, g: 0.17800298, b: 0.18496834, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -375,15 +375,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 233936640}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7614155a373b40848b1c0e078945cbb9, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b811faf9bb4c4a41b65cda601d4cecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mat1: {fileID: 2100000, guid: 714aa12282daf244da3a7a42de42851f, type: 2}
-  mat2: {fileID: 2100000, guid: 84dfcf8ecb3aa1242804d64b76b7501c, type: 2}
-  mat3: {fileID: 2100000, guid: f2b3ce99909acef4b8bae979205cb5cf, type: 2}
-  mat4: {fileID: 2100000, guid: d53104d4a24e8784892a98b11046ebbd, type: 2}
-  mat5: {fileID: 2100000, guid: 043a0f5e880d5124cb1de4814c66f6d4, type: 2}
-  mat6: {fileID: 2100000, guid: 52de0e057663b5b4aac03453fae323f6, type: 2}
+  mat1: {fileID: 2100000, guid: 85bef26686dea7847a1c1804975549d5, type: 2}
+  mat2: {fileID: 2100000, guid: 3e8515fa700939740847ff22ac369d53, type: 2}
+  mat3: {fileID: 2100000, guid: 854b57c4de0152b4189c388639a92650, type: 2}
+  mat4: {fileID: 2100000, guid: a1d658adad0e80946be3004ebe80c37d, type: 2}
+  mat5: {fileID: 2100000, guid: f5109ef669ce39f4bbe0c90c45ef3461, type: 2}
+  mat6: {fileID: 2100000, guid: 54a8c64c561a54b42b5015c9bb0c3eaf, type: 2}
+  CUI: {fileID: 0}
+  currMat: {fileID: 0}
+  SizeSlider: {fileID: 0}
 --- !u!1 &282932682
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,16 +682,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 3123af37e4b93224d9b167aee96cb55f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.64774686
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3123af37e4b93224d9b167aee96cb55f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.64774686
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3123af37e4b93224d9b167aee96cb55f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.64774686
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3123af37e4b93224d9b167aee96cb55f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.82981586
+      value: -0.82981
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3123af37e4b93224d9b167aee96cb55f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00000023841858
+      value: -0.006
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3123af37e4b93224d9b167aee96cb55f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.3167267
+      value: -3.3139
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3123af37e4b93224d9b167aee96cb55f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1172,7 +1187,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 0}
+  m_ModelPrefab: {fileID: 3475118261464492563, guid: 9f3369e30fbd31f4bb596b1a99babe83, type: 3}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
@@ -1935,7 +1950,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 0}
+  m_ModelPrefab: {fileID: 8270855663187062767, guid: 1392f805216c47742996d4742c80721c, type: 3}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
@@ -3245,7 +3260,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_TeleportationProvider: {fileID: 0}
+  m_TeleportationProvider: {fileID: 1340283323}
   m_MatchOrientation: 0
   m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
@@ -4472,9 +4487,6 @@ GameObject:
   - component: {fileID: 1340283325}
   - component: {fileID: 1340283324}
   - component: {fileID: 1340283323}
-  - component: {fileID: 1340283322}
-  - component: {fileID: 1340283327}
-  - component: {fileID: 1340283326}
   m_Layer: 0
   m_Name: Locomotion System
   m_TagString: Untagged
@@ -4482,48 +4494,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1340283322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1340283321}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2213c36610e3b1c4bbf886810ed9db12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_System: {fileID: 1340283324}
-  m_TurnAmount: 45
-  m_DebounceTime: 0.5
-  m_EnableTurnLeftRight: 1
-  m_EnableTurnAround: 1
-  m_DelayTime: 0
-  m_LeftHandSnapTurnAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Left Hand Snap Turn
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: a1d07c24-ca50-422a-a23f-685d9fabf63b
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: -7374733323251553461, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  m_RightHandSnapTurnAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Right Hand Snap Turn
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: a7b54797-6974-4f75-81d0-42b9c15ef1e0
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: -8525429354371678379, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!114 &1340283323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4531,7 +4501,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1340283321}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01f69dc1cb084aa42b2f2f8cd87bc770, type: 3}
   m_Name: 
@@ -4567,87 +4537,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1340283326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1340283321}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 919e39492806b334982b6b84c90dd927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_System: {fileID: 0}
-  m_TurnSpeed: 90
-  m_LeftHandTurnAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Left Hand Turn
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: b9ac2485-f305-451c-9106-d1d25cc235dc
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 1010738217276881514, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  m_RightHandTurnAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Right Hand Turn
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 93119ec4-ae3b-41c0-8fb4-7ff4c5e6f732
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
---- !u!114 &1340283327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1340283321}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bf296fc962d7184ab14ad1841598d5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_System: {fileID: 0}
-  m_MoveSpeed: 3
-  m_EnableStrafe: 1
-  m_EnableFly: 0
-  m_UseGravity: 1
-  m_GravityApplicationMode: 0
-  m_ForwardSource: {fileID: 0}
-  m_LeftHandMoveAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Left Hand Move
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 75f1b245-c357-48c8-9acb-8967bec9dda2
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  m_RightHandMoveAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Right Hand Move
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 6bf6c732-e011-46b1-acc5-b649a4ec5f10
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: -8198699208435500284, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &1377938848
 GameObject:
   m_ObjectHideFlags: 0
@@ -4816,16 +4705,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 7a03dcc3372e9c4429ba2b13772ccc5f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7170843
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7a03dcc3372e9c4429ba2b13772ccc5f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7170843
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7a03dcc3372e9c4429ba2b13772ccc5f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7170843
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7a03dcc3372e9c4429ba2b13772ccc5f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.814
+      value: -1.8159
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7a03dcc3372e9c4429ba2b13772ccc5f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.015
+      value: 0.007
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7a03dcc3372e9c4429ba2b13772ccc5f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.606
+      value: -0.60575
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7a03dcc3372e9c4429ba2b13772ccc5f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5678,16 +5579,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: aba2c9c13529c9041a0fbafaf0616147, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7103752
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: aba2c9c13529c9041a0fbafaf0616147, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7103752
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: aba2c9c13529c9041a0fbafaf0616147, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7103752
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: aba2c9c13529c9041a0fbafaf0616147, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.0098352
+      value: -2.0118
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: aba2c9c13529c9041a0fbafaf0616147, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.001
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: aba2c9c13529c9041a0fbafaf0616147, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.0149508
+      value: 2.0144
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: aba2c9c13529c9041a0fbafaf0616147, type: 3}
       propertyPath: m_LocalRotation.w

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR;
+using UnityEngine.InputSystem;
 
 public class drawLineManager : MonoBehaviour
 {
@@ -21,6 +23,8 @@ public class drawLineManager : MonoBehaviour
     int numClick = 0;
     private advancedLineRenderer currLine;
     // Update is called once per frame
+    public Transform rightController;
+    [SerializeField] private InputActionReference rConPos;
     void Update()
     {   
         CheckButtonInputs();
@@ -30,8 +34,13 @@ public class drawLineManager : MonoBehaviour
     private void CheckButtonInputs()
     {
         OVRInput.Update();
-        
-        Vector3 rightControllerPosition = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch);
+        //Vector3 rightControllerPosition = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch);
+
+        Vector3 rightControllerPosition = rightController.transform.position;
+
+        //Vector3 rightControllerPosition = rConPos.action.ReadValue<Vector3>();
+
+        Debug.Log(rightControllerPosition);
 
         if (OVRInput.GetDown(OVRInput.Button.One))
         {
@@ -41,7 +50,7 @@ public class drawLineManager : MonoBehaviour
             line.AddComponent<MeshRenderer> (); 
             currLine = line.AddComponent<advancedLineRenderer> ();
 
-            currLine.SetWidth (CheckSize());
+            currLine.SetWidth (0.1f);
             currLine.lineMat = currMat;
             
             numClick = 0;
@@ -91,7 +100,7 @@ public class drawLineManager : MonoBehaviour
                 break;
             }
 
-        CUI.GetComponent<Image> ().material = currMat;
+        //CUI.GetComponent<Image> ().material = currMat;
     }
 
     private float CheckSize()
