@@ -183,18 +183,24 @@ MonoBehaviour:
   m_text: 'Controls:
 
 
-    Right Stick:
+    Right Controller:
 
     Hold A to Paint.
 
-    Press B to change
-    Color.
+    Press B to
+    change Color.
+
+    Left Controller:
+
+    Press X to Undo.
 
 
     Both Controllers:
 
-    Press the triggers to interact (Teleport,
-    Grab, Adjust Slider).
+    Press
+    the triggers to interact (Teleport, Grab, Adjust Slider).
+
+
 
 '
   m_isRightToLeft: 0
