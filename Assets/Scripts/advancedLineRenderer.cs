@@ -54,8 +54,9 @@ public class advancedLineRenderer : MonoBehaviour
             q = new Vector3[4];
         else
             q = new Vector3[2];
-        Vector3 n = Vector3.Cross(x, e);
-        Vector3 l = Vector3.Cross(n, e - x);
+        //Vector3 n = Vector3.Cross(x, e);
+        //Vector3 l = Vector3.Cross(n, e - x);
+        Vector3 l = Vector3.Cross(Camera.main.transform.forward, e-x);
         l.Normalize();
 
         if(all)

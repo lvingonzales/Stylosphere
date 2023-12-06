@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.InputSystem;
 
 public class drawLineManager : MonoBehaviour
@@ -25,11 +26,13 @@ public class drawLineManager : MonoBehaviour
     // Update is called once per frame
     public Transform rightController;
     [SerializeField] private InputActionReference rConPos;
+    private Stack<GameObject> lineStack = new Stack<GameObject>();
+    private List<GameObject> deletedList = new List<GameObject>();
     void Update()
     {   
         OVRInput.Update();
-        CheckButtonInputs();
         CheckColors();
+        CheckButtonInputs();
     }
     
     private void CheckButtonInputs()
@@ -46,12 +49,14 @@ public class drawLineManager : MonoBehaviour
         {
             //Debug.Log (rightControllerPosition);
             GameObject line = new GameObject ();
+            lineStack.Push(line);
             line.AddComponent<MeshFilter> ();
-            line.AddComponent<MeshRenderer> (); 
+            line.AddComponent<MeshRenderer> ();
             currLine = line.AddComponent<advancedLineRenderer> ();
 
             currLine.SetWidth (CheckSize());
             currLine.lineMat = currMat;
+            
             
             numClick = 0;
         }else if(OVRInput.Get(OVRInput.Button.One))
@@ -66,11 +71,30 @@ public class drawLineManager : MonoBehaviour
 
             Debug.Log ("B Pressed");
             currColor+=1;
+            Debug.Log (currColor);
 
             if (currColor > 6)
             {
                 currColor = 1;
             }
+            CheckColors();
+        }
+
+        if (OVRInput.GetDown(OVRInput.Button.Three))
+        {
+            Debug.Log ("X Pressed");
+            if(lineStack.Count > 0)
+            {
+                Debug.Log ("Reached Delete function");
+                GameObject removedObject = lineStack.Pop();
+
+                Destroy(removedObject);
+
+                //deletedList.Add(removedObject);
+
+                //deletedList[deletedList.Count - 1] = null;
+            }
+            
         }
 
     }
@@ -105,7 +129,7 @@ public class drawLineManager : MonoBehaviour
 
     private float CheckSize()
     {
-        Debug.Log ("Check Size Reached");
+        //Debug.Log ("Check Size Reached");
         float width = SizeSlider.GetComponent<Slider> ().value;
         return width;
     }
